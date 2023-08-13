@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bike_showroom_admin_dashboard/static/css/main.34ad054e.css",
+    "main.js": "/bike_showroom_admin_dashboard/static/js/main.27e4ab7b.js",
+    "index.html": "/bike_showroom_admin_dashboard/index.html",
+    "main.34ad054e.css.map": "/bike_showroom_admin_dashboard/static/css/main.34ad054e.css.map",
+    "main.27e4ab7b.js.map": "/bike_showroom_admin_dashboard/static/js/main.27e4ab7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34ad054e.css",
+    "static/js/main.27e4ab7b.js"
+  ]
+}
