@@ -1,0 +1,24 @@
+@import '../scss//variables';
+
+@mixin d-f-c(){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  @include d-f-c;
+  height: 100vh;
+  background-color: $background_color;
+  .login-content {
+    @include d-f-c;
+    border: 1px solid $dark_color;
+    background-color: $primary_color;
+    width: 30% !important;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px 1px black;
+  }
+}
