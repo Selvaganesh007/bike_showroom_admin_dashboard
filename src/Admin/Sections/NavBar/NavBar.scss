@@ -1,0 +1,57 @@
+@import '../../../scss/variables';
+
+.NavBar {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $dark_background_color;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    h3 {
+        padding-left: 2rem;
+        color: $primary_color;
+        font-size: 1.8rem;
+    }
+    .login_user-icon {
+        color: $primary_color;
+        font-size: 1.4rem;
+        padding-right: 2rem;
+    }
+    ul {
+        list-style-type: none;
+        position: absolute;
+        top: 3rem;
+        right: 2rem;
+        background-color: $dark_color;
+        border-radius: 0.4rem;
+        width: 7rem;
+        padding: 0.5rem;
+        li {
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: $primary_font;
+            color: $background_color;
+            padding: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            a {
+                text-decoration: none;
+                color: $background_color;
+            }
+            a:hover {
+                color: white;
+            }
+        }
+        li:hover {
+            background-color: $dark_background_color;
+            color: white;
+            border-radius: 0.4rem;
+            cursor: pointer;
+        }
+    }
+}

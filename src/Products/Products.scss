@@ -1,0 +1,16 @@
+@import '../scss/variables';
+
+.products {
+  width: calc(100% - 14rem);
+  position: fixed;
+  top: 4rem;
+  left: 14rem;
+  padding: 2rem;
+  color: $dark_color;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  h3 {
+    margin: 0 0 1rem 0;
+  }
+}

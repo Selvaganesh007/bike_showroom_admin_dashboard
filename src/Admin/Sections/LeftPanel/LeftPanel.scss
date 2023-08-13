@@ -1,0 +1,26 @@
+@import '../../../scss/variables';
+
+.LeftPanel {
+    width: 14rem;
+    height: 62.225rem;
+    background-color: $dark_background_color;
+    position: fixed;
+    top: 4rem;
+    z-index: 999;
+    .tab {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 1rem 1.8rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        font-family: $secondary_font;
+        text-decoration: none;
+        color: $primary_color;
+    }
+    .tab:hover {
+        background-color: $secondary_color;
+        border-radius: 0.4rem;
+        color: $background_color;
+    }
+}
