@@ -4,7 +4,7 @@ import './Order.scss';
 const Order = () => {
   return (
     <div className='order'>
-      Order
+      Order page working progress
     </div>
   )
 }

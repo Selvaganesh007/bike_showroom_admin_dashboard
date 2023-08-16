@@ -23,15 +23,21 @@ const NavBar = () => {
       </div>
       {userIconClicked && (
         <ul>
-          <li>
-            <FaRegUser /> <NavLink to="profile">My Profile</NavLink>
-          </li>
-          <li>
-            <LuSettings /> <NavLink to="settings">Settings</NavLink>
-          </li>
-          <li onClick={() => handleLogOut()}>
-            <LuLogOut /> <NavLink to="login">Log out</NavLink>
-          </li>
+          <NavLink to="profile">
+            <li>
+              <FaRegUser /> My Profile
+            </li>
+          </NavLink>
+          <NavLink to="settings">
+            <li>
+              <LuSettings /> Settings
+            </li>
+          </NavLink>
+          <NavLink to="/login">
+            <li onClick={() => handleLogOut()}>
+              <LuLogOut /> Log out
+            </li>
+          </NavLink>
         </ul>
       )}
     </div>

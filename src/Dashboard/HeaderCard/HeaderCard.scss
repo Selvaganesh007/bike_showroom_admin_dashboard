@@ -1,0 +1,32 @@
+@import "../../scss/variables";
+
+.headerCard {
+  padding: 0.6rem;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 50% 10%;
+  background-clip: padding-box;
+  box-shadow: 3px 4px 5px 1px rgba(67, 89, 113, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    36deg,
+    rgba(211, 245, 207, 1) 0%,
+    rgba(168, 219, 250, 1) 35%,
+    rgba(99, 94, 226, 1) 100%
+  );
+  color: black;
+  .headerCard-icon {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin: 0 0 0 -2rem;
+  }
+  h4 {
+    font-size: 1.6rem;
+    margin: 0 0 0 -2rem;
+  }
+}

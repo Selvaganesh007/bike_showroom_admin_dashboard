@@ -30,28 +30,28 @@
         border-radius: 0.4rem;
         width: 7rem;
         padding: 0.5rem;
-        li {
-            font-size: 1rem;
-            font-weight: 600;
-            font-family: $primary_font;
+        a {
+            text-decoration: none;
             color: $background_color;
-            padding: 0.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.2rem;
-            a {
-                text-decoration: none;
+            li {
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: $primary_font;
                 color: $background_color;
-            }
-            a:hover {
-                color: white;
+                padding: 0.2rem;
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
             }
         }
-        li:hover {
-            background-color: $dark_background_color;
+        a:hover {
             color: white;
-            border-radius: 0.4rem;
-            cursor: pointer;
+            li:hover {
+                background-color: $dark_background_color;
+                color: white;
+                border-radius: 0.4rem;
+                cursor: pointer;
+            }
         }
     }
 }
