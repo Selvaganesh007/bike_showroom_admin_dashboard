@@ -1,11 +1,10 @@
-
 export const ACTION_TYPES = {
-  TOTAL_PRODUCTS: 'TOTAL_PRODUCTS',
+  PRODUCTS_DETAILS: 'PRODUCTS_DETAILS'
 }
 
-export const totalProduct = (data) => {
+export const productsDetailsUpdate = (data) => {
   return {
-    type: ACTION_TYPES.TOTAL_PRODUCTS,
+    type: ACTION_TYPES.PRODUCTS_DETAILS,
     payload: data,
   }
 };

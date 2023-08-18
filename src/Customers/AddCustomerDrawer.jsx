@@ -15,11 +15,12 @@ const AddCustomerDrawer = ({
   customerdetails,
   setCustomerDetail,
   handleAddCustomer,
+  customers_details
 }) => {
   const handleCustomerDetailChange = (value, field) => {
     switch (field) {
       case "customer_name":
-        return setCustomerDetail({ ...customerdetails, customer_name: value });
+        return setCustomerDetail({ ...customerdetails, customer_name: value, customer_id: customers_details.length + 2001 });
       case "gender":
         return setCustomerDetail({ ...customerdetails, gender: value });
       case "date_of_birth":
@@ -87,6 +88,7 @@ const AddCustomerDrawer = ({
         <DatePicker
           style={{ width: "100%" }}
           value={date_of_birth}
+          format='DD/MM/YYYY'
           onChange={(value) =>
             handleCustomerDetailChange(value, "date_of_birth")
           }

@@ -31,30 +31,3 @@ export const dashboardCards = [
     icon: <MdBikeScooter />,
   },
 ];
-
-export const notificationList = [
-  {
-    notification_type: 'service',
-    notification_for: 'admin',
-    notification_User: 'Selvaganesh',
-    user_id: '001',
-  },
-  {
-    notification_type: 'service',
-    notification_for: 'admin',
-    notification_User: 'Dharunkumar',
-    user_id: '002',
-  },
-  {
-    notification_type: 'service',
-    notification_for: 'admin',
-    notification_User: 'Edward',
-    user_id: '004',
-  },
-  {
-    notification_type: 'service',
-    notification_for: 'admin',
-    notification_User: 'Pradeep',
-    user_id: '003',
-  },
-]

@@ -1,11 +1,6 @@
 import React from "react";
 import Login from "./Login/Login";
-import {
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements   } from "react-router-dom";
 import AdminLayout from "./RootLayout/AdminLayout";
 import Dashboard from "./Dashboard/Dashboard";
 import Products from "./Products/Products";

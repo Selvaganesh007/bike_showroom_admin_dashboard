@@ -1,8 +1,7 @@
 import React from 'react';
 import './HeaderCard.scss';
 
-const HeaderCard = ({ data }) => {
-  const { card_name, item_count, icon } = data;
+const HeaderCard = ({ card_name, item_count, icon }) => {
   return (
       <div className='headerCard'>
         <div className='headerCard-icon'>{icon}</div>
