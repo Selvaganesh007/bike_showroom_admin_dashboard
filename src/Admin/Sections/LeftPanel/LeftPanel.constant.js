@@ -21,11 +21,11 @@ export const LEFT_PANEL_KEYS = [
         tabKey: 'order',
         component: <TbTruckDelivery />,
     },
-    {
-        tabName: 'Sales',
-        tabKey: 'sales',
-        component: <GiMoneyStack />,
-    },
+    // {
+    //     tabName: 'Sales',
+    //     tabKey: 'sales',
+    //     component: <GiMoneyStack />,
+    // },
     {
         tabName: 'Products',
         tabKey: 'products',

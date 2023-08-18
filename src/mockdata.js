@@ -2,7 +2,7 @@ export const productMockData = [
   {
     product_id: "1",
     product_name: "Hunter 350",
-    price: "₹1,49,900",
+    price: "149900",
     status: "Available",
     available_qty: 3,
     engine_capacity: "349.34 cc",
@@ -15,7 +15,7 @@ export const productMockData = [
   {
     product_id: "2",
     product_name: "Classic 350",
-    price: "1,93,080",
+    price: "193080",
     status: "Available",
     available_qty: 5,
     engine_capacity: "349 cc",
@@ -28,7 +28,7 @@ export const productMockData = [
   {
     product_id: "3",
     product_name: "Meteor 350",
-    price: "₹ 2,04,114",
+    price: "204114",
     status: "Available",
     available_qty: 2,
     engine_capacity: "349 cc",
@@ -41,7 +41,7 @@ export const productMockData = [
   {
     product_id: "4",
     product_name: "Bullet 350",
-    price: "₹1,50,894",
+    price: "150894",
     status: "Available",
     available_qty: 1,
     engine_capacity: "346 cc",
@@ -54,7 +54,7 @@ export const productMockData = [
   {
     product_id: "5",
     product_name: "Super Meteor 650",
-    price: "3,54,398",
+    price: "354398",
     status: "Coming soon",
     available_qty: 0,
     engine_capacity: "349.34 cc",
@@ -67,7 +67,7 @@ export const productMockData = [
   {
     product_id: "6",
     product_name: "Himalayan",
-    price: "₹ 2,15,881",
+    price: "215881",
     status: "Available",
     available_qty: 3,
     engine_capacity: "411 cc",
@@ -80,7 +80,7 @@ export const productMockData = [
   {
     product_id: "7",
     product_name: "Scram 411",
-    price: "₹ 2,06,234",
+    price: "206234",
     status: "Available",
     available_qty: 2,
     engine_capacity: "411 cc",
@@ -93,7 +93,7 @@ export const productMockData = [
   {
     product_id: "8",
     product_name: "Continental GT 650",
-    price: "₹ 3,18,417",
+    price: "318417",
     status: "Available",
     available_qty: 1,
     engine_capacity: "648 cc",
@@ -183,7 +183,7 @@ export const serviceDetailsMockData = [
     bike_details: {
       product_id: "1",
       product_name: "Hunter 350",
-      price: "₹1,49,900",
+      price: "149900",
       status: "Available",
       available_qty: 3,
       engine_capacity: "349.34 cc",
@@ -213,7 +213,7 @@ export const serviceDetailsMockData = [
     bike_details: {
       product_id: "3",
       product_name: "Meteor 350",
-      price: "₹ 2,04,114",
+      price: "204114",
       status: "Available",
       available_qty: 2,
       engine_capacity: "349 cc",
@@ -243,7 +243,7 @@ export const serviceDetailsMockData = [
     bike_details: {
       product_id: "2",
       product_name: "Classic 350",
-      price: "1,93,080",
+      price: "193080",
       status: "Available",
       available_qty: 5,
       engine_capacity: "349 cc",
@@ -261,7 +261,8 @@ export const orderDetailsMockData = [
     order_id: '301001',
     order_status: 'ordered',
     amount: '500',
-    order_date: '31',
+    balance_amount: '149400',
+    order_date: '1697634184',
     delivery_status: 'Not delivered yet',
     customer_details: {
       customer_id: "2001",
@@ -277,7 +278,7 @@ export const orderDetailsMockData = [
     bike_details: {
       product_id: "1",
       product_name: "Hunter 350",
-      price: "₹1,49,900",
+      price: "149900",
       status: "Available",
       available_qty: 3,
       engine_capacity: "349.34 cc",
@@ -292,7 +293,8 @@ export const orderDetailsMockData = [
     order_id: '301002',
     order_status: 'ordered',
     amount: '500',
-    order_date: '11',
+    balance_amount: '215381',
+    order_date: '1697029384',
     delivery_status: 'Not delivered yet',
     customer_details:{
       customer_id: "2005",
@@ -308,7 +310,7 @@ export const orderDetailsMockData = [
     bike_details: {
       product_id: "6",
       product_name: "Himalayan",
-      price: "₹ 2,15,881",
+      price: "215881",
       status: "Available",
       available_qty: 3,
       engine_capacity: "411 cc",
