@@ -4,6 +4,7 @@ import "./Login.scss";
 import { Button, Input } from "antd";
 import { BiSolidUser } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
+import logo from '../Images/logo.png';
 
 function Login() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ function Login() {
   };
 
   const handleLogin = () => {
-    if (inputDetails.userName !== '') {
+    if (inputDetails.userName === 'admin' && inputDetails.passWord === 'admin') {
       navigate("/admin-panel/dash_board");
     }
   };
@@ -29,6 +30,9 @@ function Login() {
   return (
     <div className="login">
       <div className="login-content">
+        <div className="login-logo">
+          <img src={logo} alt="Logo" />
+        </div>
         <Input
           placeholder="User name"
           value={inputDetails.userName}
