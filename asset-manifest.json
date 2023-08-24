@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/bike_showroom_admin_dashboard/static/css/main.7bca1518.css",
-    "main.js": "/bike_showroom_admin_dashboard/static/js/main.0eda0106.js",
+    "main.css": "/bike_showroom_admin_dashboard/static/css/main.156c0474.css",
+    "main.js": "/bike_showroom_admin_dashboard/static/js/main.9bc10080.js",
     "static/media/logo.png": "/bike_showroom_admin_dashboard/static/media/logo.a57dbf1b3359783acc4e.png",
     "index.html": "/bike_showroom_admin_dashboard/index.html",
-    "main.7bca1518.css.map": "/bike_showroom_admin_dashboard/static/css/main.7bca1518.css.map",
-    "main.0eda0106.js.map": "/bike_showroom_admin_dashboard/static/js/main.0eda0106.js.map"
+    "main.156c0474.css.map": "/bike_showroom_admin_dashboard/static/css/main.156c0474.css.map",
+    "main.9bc10080.js.map": "/bike_showroom_admin_dashboard/static/js/main.9bc10080.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bca1518.css",
-    "static/js/main.0eda0106.js"
+    "static/css/main.156c0474.css",
+    "static/js/main.9bc10080.js"
   ]
 }
