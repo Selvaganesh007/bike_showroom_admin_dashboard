@@ -59,6 +59,8 @@ const Order = ({ orderDetails = [], addNewOrder }) => {
           columns={ORDER_TABLE_COLUMNS}
           dataSource={orderDetails}
           pagination={false}
+          scroll={{x:1300, y: 400}}
+
         />
       </div>
       <NewBookingDrawer

@@ -20,14 +20,17 @@ const NewBookingDrawer = ({
       case "product_id":
         return setOrderDetail({ ...orderDetail, product_id: value });
       case "amount":
-        const balance_amount = parseInt(productDetails.filter(val => val.product_id === orderDetail.product_id && val)[0].price) - value;
+        const productTotalPrice = parseInt(productDetails.filter(val => val?.product_id === orderDetail?.product_id && val)[0]?.price);
+        const balance_amount = productTotalPrice - value;
+        if (value > productTotalPrice) return alert(`Product total amount is ${productTotalPrice} only.`);
         return setOrderDetail({
           ...orderDetail,
           amount: value,
           balance_amount: balance_amount,
           order_id: orderDetails.length + 301001,
           order_date: new Date().getTime(),
-          delivery_status: balance_amount === 0 ? 'Ready for delivery' : "Booked",
+          order_status: 'Ordered',
+          delivery_status: balance_amount === 0 ? 'Ready for delivery' : "Ordered",
           bike_details: productDetails.filter(val => val.product_id === orderDetail.product_id && val)[0],
           customer_details: customersDetails.filter(val => val.customer_id === orderDetail.customer_id && val)[0],
         });
@@ -86,7 +89,6 @@ const NewBookingDrawer = ({
         <span>Amount:*</span>
         <InputNumber
           placeholder="Amount"
-          max={orderDetail?.bike_details?.price || 0}
           style={{ width: "100%" }}
           onChange={(e) => handleCustomerDetailChange(e, "amount")}
           value={amount}

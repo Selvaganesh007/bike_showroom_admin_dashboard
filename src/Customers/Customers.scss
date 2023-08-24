@@ -17,6 +17,14 @@
       margin: 0 0 1rem 0;
     }
   }
+  .customer_table {
+    width: 100%;
+    height: 80vh;
+    overflow: scroll;
+  }
+  .customer_table::-webkit-scrollbar {
+    width: 0 !important;
+  }
   span {
     margin: 0;
   }

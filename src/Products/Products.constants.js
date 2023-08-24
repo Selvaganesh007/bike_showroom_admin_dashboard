@@ -62,6 +62,5 @@ export const PRODUCT_TABLE_COLUMNS = [
     title: "Seat Height",
     dataIndex: "seat_height",
     key: "seat_height",
-    width: 120,
   },
 ];

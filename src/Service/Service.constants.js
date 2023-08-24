@@ -37,4 +37,4 @@ export const SERVICE_TABLE_COLUMNS = [
     render: (data) => data?.product_name,
     width: 110,
   },
-]
+];

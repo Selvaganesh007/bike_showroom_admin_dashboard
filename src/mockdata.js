@@ -258,12 +258,12 @@ export const serviceDetailsMockData = [
 
 export const orderDetailsMockData = [
   {
-    order_id: '301001',
-    order_status: 'ordered',
-    amount: '500',
-    balance_amount: '149400',
-    order_date: '1697634184',
-    delivery_status: 'Not delivered yet',
+    order_id: "301001",
+    order_status: "ordered",
+    amount: "500",
+    balance_amount: "149400",
+    order_date: "1697634184",
+    delivery_status: "Not delivered yet",
     customer_details: {
       customer_id: "2001",
       customer_name: "Selvaganesh",
@@ -290,13 +290,13 @@ export const orderDetailsMockData = [
     },
   },
   {
-    order_id: '301002',
-    order_status: 'ordered',
-    amount: '500',
-    balance_amount: '215381',
-    order_date: '1697029384',
-    delivery_status: 'Not delivered yet',
-    customer_details:{
+    order_id: "301002",
+    order_status: "ordered",
+    amount: "500",
+    balance_amount: "215381",
+    order_date: "1697029384",
+    delivery_status: "Not delivered yet",
+    customer_details: {
       customer_id: "2005",
       customer_name: "Hari",
       city: "Kovilpatti",
@@ -321,4 +321,65 @@ export const orderDetailsMockData = [
       seat_height: "800 mm",
     },
   },
+];
+
+export const salesdetailsMockData = [
+  {
+    sales_id: "1298500",
+    salesman_name: "Ram G",
+    delivery_date: "",
+    bike_details: {
+      product_id: "1",
+      product_name: "Hunter 350",
+      price: "149900",
+      status: "Available",
+      available_qty: 3,
+      engine_capacity: "349.34 cc",
+      mileage: "36 kmpl",
+      transmission: "5 Speed Manual",
+      kerb_weight: "177 kg",
+      fuel_tank_capacity: "13 litres",
+      seat_height: "800 mm",
+    },
+    customer_details: {
+      customer_id: "2005",
+      customer_name: "Hari",
+      city: "Kovilpatti",
+      state: "Tamil nadu",
+      email: "hari@gmail.com",
+      phone_number: "9283478723",
+      pin_code: 628501,
+      gender: "",
+      date_of_birth: "",
+    },
+  },
+  {
+    sales_id: "1298501",
+    salesman_name: "Ram G",
+    delivery_date: "",
+    customer_details: {
+      customer_id: "2005",
+      customer_name: "Hari",
+      city: "Kovilpatti",
+      state: "Tamil nadu",
+      email: "hari@gmail.com",
+      phone_number: "9283478723",
+      pin_code: 628501,
+      gender: "",
+      date_of_birth: "",
+    },
+    bike_details: {
+      product_id: "6",
+      product_name: "Himalayan",
+      price: "215881",
+      status: "Available",
+      available_qty: 3,
+      engine_capacity: "411 cc",
+      mileage: "31 kmpl",
+      transmission: "5 Speed Manual",
+      kerb_weight: "199 kg",
+      fuel_tank_capacity: "15 litres",
+      seat_height: "800 mm",
+    },
+  }
 ];

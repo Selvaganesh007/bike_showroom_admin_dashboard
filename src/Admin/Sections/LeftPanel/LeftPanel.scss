@@ -7,7 +7,7 @@
     position: fixed;
     top: 4rem;
     z-index: 999;
-    .tab {
+    @mixin tabStyle {
         display: flex;
         align-items: center;
         gap: 0.6rem;
@@ -16,11 +16,62 @@
         font-weight: 500;
         font-family: $secondary_font;
         text-decoration: none;
+    }
+    .tab {
+        @include tabStyle();
         color: $primary_color;
+        transition: all 0.1s;
+        border-left: 0rem solid $dark_color;
     }
     .tab:hover {
-        background-color: $secondary_color;
-        border-radius: 0.4rem;
-        color: $background_color;
+        @include tabStyle();
+        color: white;
+        border-left: 0.1rem solid $dark_color;
+        font-size: 1.3rem;
+    }
+    .selectedTab {
+        @include tabStyle();
+        // background-color: $background_color;
+        // border-radius: 0.4rem;
+        // color: white;
+        // font-size: 1.5rem;
+        color: white;
+        border-left: 0.3rem solid $dark_color;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .LeftPanel {
+        width: 14rem;
+        height: 62.225rem;
+        background-color: $dark_background_color;
+        position: fixed;
+        top: 4rem;
+        z-index: 999;
+        @mixin tabStyle {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 1.8rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-family: $secondary_font;
+            text-decoration: none;
+        }
+        .tab {
+            @include tabStyle();
+            color: $primary_color;
+            transition: all 0.1s;
+            border-left: 0rem solid $dark_color;
+        }
+        .tab:hover {
+            @include tabStyle();
+            font-size: 1.3rem;
+        }
+        .selectedTab {
+            @include tabStyle();
+            font-size: 0.5rem;
+        }
     }
 }

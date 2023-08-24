@@ -3,28 +3,28 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../Admin/Sections/NavBar/NavBar";
 import LeftPanel from "../Admin/Sections/LeftPanel/LeftPanel";
 import { connect } from "react-redux";
-import { customersMockdata, serviceDetailsMockData, productMockData, orderDetailsMockData } from "../mockdata";
+import { customersMockdata, serviceDetailsMockData, productMockData, orderDetailsMockData, salesdetailsMockData } from "../mockdata";
 import { productsDetailsUpdate } from "../Features/Actions/Products.action";
 import { customersDetailsUpdate } from "../Features/Actions/Customers.action";
 import { serviceDetailsUpdate } from "../Features/Actions/Service.action";
 import { orderDetailsUpdate } from "../Features/Actions/Order.action";
+import { salesDetailsUpdate } from "../Features/Actions/Sales.action";
 
-const AdminLayout = ({ fetchProductDetail, fetchCustomersDetail, fetchServicePendingDetails, fetchOrderDetails }) => {
+const AdminLayout = ({ fetchProductDetail, fetchCustomersDetail, fetchServicePendingDetails, fetchOrderDetails, fetchSalesdetails }) => {
 
   useEffect(() => {
     fetchProductDetail(productMockData);
     fetchCustomersDetail(customersMockdata);
     fetchServicePendingDetails(serviceDetailsMockData);
     fetchOrderDetails(orderDetailsMockData);
+    fetchSalesdetails(salesdetailsMockData);
   }, []);
 
   return (
     <>
       <div>
         <NavBar />
-        <div>
-          <LeftPanel />
-        </div>
+        <LeftPanel />
       </div>
       <Outlet />
     </>
@@ -39,6 +39,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchCustomersDetail: (data) => dispatch(customersDetailsUpdate(data)),
     fetchServicePendingDetails: (data) => dispatch(serviceDetailsUpdate(data)),
     fetchOrderDetails: (data) => dispatch(orderDetailsUpdate(data)),
+    fetchSalesdetails: (data) => dispatch(salesDetailsUpdate(data)),
   }
 }
 
