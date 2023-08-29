@@ -67,14 +67,14 @@ const NotificationCard = ({
           >
             Accept
           </Button>
-          <Button
+          {/* <Button
             type="primary"
             danger
             size="small"
             onClick={() => handleNotificationAction("decline")}
           >
             Decline
-          </Button>
+          </Button> */}
         </div>
       </div>
       <p>

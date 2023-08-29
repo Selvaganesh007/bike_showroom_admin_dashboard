@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Login from "./Login/Login";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements   } from "react-router-dom";
 import AdminLayout from "./RootLayout/AdminLayout";
@@ -9,8 +9,17 @@ import Order from "./Order/Order";
 import Customers from "./Customers/Customers";
 import Service from "./Service/Service";
 import Sales from "./Sales/Sales";
+import { connect } from "react-redux";
+import { adminDetailsUpdate } from "./Features/Actions/Access.action";
 
-function Base() {
+function Base({ updateAdminDetail }) {
+
+  useEffect(() => {
+    const adminDetail = sessionStorage.getItem("adminDetails");
+    console.log(JSON.parse(adminDetail));
+    updateAdminDetail(JSON.parse(adminDetail));
+  }, []);
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -34,6 +43,14 @@ function Base() {
       <RouterProvider router={router} />
     </div>
   );
+};
+
+const mapStateToProps = () => {};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateAdminDetail: (data) => dispatch(adminDetailsUpdate(data)),
+  }
 }
 
-export default Base;
+export default connect(mapStateToProps, mapDispatchToProps)(Base);

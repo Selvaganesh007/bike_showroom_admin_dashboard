@@ -11,6 +11,11 @@ const orderReducer = (state = initial_state, action) => {
         ...state,
         order_details: action.payload,
       }
+      case ACTION_TYPES.ADD_ORDER:
+        return {
+          ...state,
+          order_details: [...state.order_details, action.payload],
+        }
     default: return state;
   }
 };

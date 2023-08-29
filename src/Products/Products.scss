@@ -1,4 +1,4 @@
-@import '../Assets/scss/variables';
+@import "../Assets/scss/variables";
 
 .products {
   width: calc(100% - 18rem);
@@ -7,7 +7,7 @@
   left: 14rem;
   padding: 2rem;
   color: $dark_color;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   h3 {
@@ -19,6 +19,12 @@
     overflow: scroll;
   }
   .products_table::-webkit-scrollbar {
-    width: 0 !important
+    width: 0 !important;
+  }
+  antd-table-custom-class thead th,
+  .antd-table-custom-class tbody td {
+    white-space: nowrap;
+    word-break: break-word;
+    word-break: break-all;
   }
 }

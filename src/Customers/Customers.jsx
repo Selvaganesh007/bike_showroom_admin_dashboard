@@ -71,11 +71,13 @@ const Customers = ({ customers_details, addNewCustomer }) => {
           Add new customer
         </Button>
       </div>
+      <div className='customer_table'>
       <Table
         columns={CUSTOMERS_TABLE_COLUMNS}
         dataSource={customers_details || []}
         pagination={false}
       />
+      </div>
       <AddCustomerDrawer
         drawerOpen={draweropen}
         onDrawerClose={setDraweropen}

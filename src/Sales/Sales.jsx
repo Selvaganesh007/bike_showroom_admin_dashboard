@@ -1,24 +1,40 @@
 import React from 'react';
 import './Sales.scss';
-// import { connect } from 'react-redux';
-// import { Table } from 'antd';
-// import { } from './Sales.constants';
+import { connect } from 'react-redux';
+import { Table } from 'antd';
+import { SALES_PERSONS, SALES_TABLE_COLUMNS } from './Sales.constants';
+import SalesTeamCard from './SalesTeamCard/SalesTeamCard';
 
-const Sales = () => {
+const Sales = ({ salesDetails }) => {
   return (
     <div className='Sales'>
+      <div className='sales-header'>
+        <h3>Sales Team</h3>
+        <div className='sales-cards'>
+        {
+          SALES_PERSONS.map(val => <SalesTeamCard data={val} />)
+        }
+        </div>
+      </div>
       <h3>Sales</h3>
+      <div className="sales_table">
+        <Table
+          columns={SALES_TABLE_COLUMNS}
+          dataSource={salesDetails}
+          pagination={false}
+          scroll={{x:1000, y: 400}}
+        />
+      </div>
     </div>
   )
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     salesDetails: state.sales.sales_details,
-//   }
-// };
+const mapStateToProps = (state) => {
+  return {
+    salesDetails: state.sales.sales_details,
+  }
+};
 
-// const mapDispatchToProps = (dispatch) => {}
+const mapDispatchToProps = () => {}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Sales);
-export default Sales;
+export default connect(mapStateToProps, mapDispatchToProps)(Sales);
