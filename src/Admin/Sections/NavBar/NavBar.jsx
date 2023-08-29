@@ -3,8 +3,9 @@ import "./NavBar.scss";
 import { FaUserAlt, FaRegUser } from "react-icons/fa";
 import { LuLogOut, LuSettings } from "react-icons/lu";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
-const NavBar = () => {
+const NavBar = ({ adminDetail }) => {
   const [userIconClicked, setUserIconClicked] = useState(false);
 
   const handleLogOut = () => {
@@ -19,7 +20,7 @@ const NavBar = () => {
         className="login_user-icon"
         onClick={() => setUserIconClicked(!userIconClicked)}
       >
-        <FaUserAlt />
+        {(adminDetail?.first_name || '').toUpperCase()} <FaUserAlt />
       </div>
       {userIconClicked && (
         <ul>
@@ -44,4 +45,10 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+const mapStateToProps = (state) => {
+  return {
+    adminDetail: state.admin.admin_details,
+  }
+}
+
+export default connect(mapStateToProps)(NavBar);

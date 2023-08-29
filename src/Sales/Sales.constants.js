@@ -49,6 +49,7 @@ export const SALES_PERSONS = [
     sale_item_count: 192,
     department: 'Sales',
     active_status: 'Active',
+    img: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60',
   },
   {
     salesman_name: 'Siva M',
@@ -58,6 +59,7 @@ export const SALES_PERSONS = [
     sale_item_count: 128,
     department: 'Sales',
     active_status: 'Active',
+    img: 'https://images.unsplash.com/photo-1602133187081-4874fdbd555c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFzc3BvcnQlMjBwaG90b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60',
   },
   {
     salesman_name: 'Robert J',
@@ -67,5 +69,6 @@ export const SALES_PERSONS = [
     sale_item_count: 15,
     department: 'Sales',
     active_status: 'In-active',
+    img: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
   },
 ];

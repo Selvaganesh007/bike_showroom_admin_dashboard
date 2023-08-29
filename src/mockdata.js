@@ -383,3 +383,28 @@ export const salesdetailsMockData = [
     },
   }
 ];
+
+export const loginDetails = [
+  {
+    userName: 'admin1',
+    password: 'admin1',
+    access: true,
+    view: ['dashboard', 'customers', 'orders', 'sales', 'products', 'service'],
+    edit: ['dashboard', 'customers', 'orders', 'sales', 'products', 'service'],
+    first_name: 'admin',
+    last_name: '1',
+    gender: 'male',
+    employee_id: '0778462'
+  },
+  {
+    userName: 'admin2',
+    password: 'admin2',
+    access: true,
+    view: ['dashboard', 'customers', 'orders', 'sales', 'products', 'service'],
+    edit: [],
+    first_name: 'admin',
+    last_name: '2',
+    gender: 'male',
+    employee_id: '0778463'
+  }
+]

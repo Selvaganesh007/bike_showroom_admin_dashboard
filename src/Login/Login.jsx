@@ -5,8 +5,11 @@ import { Button, Input } from "antd";
 import { BiSolidUser } from "react-icons/bi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import logo from '../Images/logo.png';
+import { loginDetails } from "../mockdata";
+import { connect } from "react-redux";
+import { adminDetailsUpdate } from "../Features/Actions/Access.action";
 
-function Login() {
+function Login({ updateAdminDetail }) {
   const navigate = useNavigate();
   const [inputDetails, setInputDetails] = useState({
     userName: '',
@@ -22,8 +25,13 @@ function Login() {
   };
 
   const handleLogin = () => {
-    if (inputDetails.userName === 'admin' && inputDetails.passWord === 'admin') {
+    const adminDetails = loginDetails.filter(val => val.userName === inputDetails.userName && val.password === inputDetails.passWord);
+    updateAdminDetail(adminDetails[0]);
+    sessionStorage.setItem("adminDetails", JSON.stringify(adminDetails[0]));
+    if (adminDetails.length > 0) {
       navigate("/admin-panel/dash_board");
+    } else {
+      alert('Kindly fill correct usename and password');
     }
   };
 
@@ -55,4 +63,12 @@ function Login() {
   );
 }
 
-export default Login;
+const mapStatesToProps = () => {};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateAdminDetail: (data) => dispatch(adminDetailsUpdate(data)),
+  }
+}
+
+export default connect(mapStatesToProps, mapDispatchToProps)(Login);
