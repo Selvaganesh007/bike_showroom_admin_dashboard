@@ -9,12 +9,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    36deg,
-    rgba(211, 245, 207, 1) 0%,
-    rgba(168, 219, 250, 1) 35%,
-    rgba(99, 94, 226, 1) 100%
-  );
+  // background: linear-gradient(
+  //   36deg,
+  //   rgba(211, 245, 207, 1) 0%,
+  //   rgba(168, 219, 250, 1) 35%,
+  //   rgba(99, 94, 226, 1) 100%
+  // );
+  background-color: white;
   p {
     margin: 0 0.4rem;
     padding-left: 0.4rem;
@@ -26,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     height: 2rem;
+    transition: margin-right 2s 1s;
     h3 {
       font-size: 1rem;
       color: rgb(255, 0, 0);
@@ -33,6 +35,13 @@
     .notification-actions {
       display: flex;
       gap: 1rem;
+    }
+  }
+  .notification-header:hover {
+    color: rgb(255, 0, 0);
+    h3 {
+      font-size: 1.1rem;
+      color: rgb(33, 117, 220);
     }
   }
 }

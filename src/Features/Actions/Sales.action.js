@@ -1,5 +1,6 @@
 export const ACTION_TYPES = {
   SALES_DETAILS: "SALES_DETAILS",
+  SALES_PERSONS: 'SALES_PERSONS',
 };
 
 export const salesDetailsUpdate = (data) => {
@@ -8,3 +9,10 @@ export const salesDetailsUpdate = (data) => {
     payload: data,
   };
 };
+
+export const salesPersonsUpdate = (data) => {
+  return {
+    type: ACTION_TYPES.SALES_PERSONS,
+    payload: data,
+  }
+}

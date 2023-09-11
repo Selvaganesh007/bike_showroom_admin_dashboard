@@ -12,6 +12,7 @@ const NewBookingDrawer = ({
   orderDetails,
   customersDetails,
   productDetails,
+  salesPersonsDetails,
 }) => {
   const handleCustomerDetailChange = (value, field) => {
     switch (field) {
@@ -19,6 +20,8 @@ const NewBookingDrawer = ({
         return setOrderDetail({ ...orderDetail, customer_id: value });
       case "product_id":
         return setOrderDetail({ ...orderDetail, product_id: value });
+      case "salesman_name":
+        return setOrderDetail({ ...orderDetail, salesman_name: value });
       case "amount":
         const productTotalPrice = parseInt(productDetails.filter(val => val?.product_id === orderDetail?.product_id && val)[0]?.price);
         const balance_amount = productTotalPrice - value;
@@ -38,7 +41,7 @@ const NewBookingDrawer = ({
     }
   };
 
-  const { customer_id, product_id, amount } = orderDetail;
+  const { customer_id, product_id, amount, salesman_name } = orderDetail;
   return (
     <div className="newBookingDrawer">
       <Drawer
@@ -93,6 +96,21 @@ const NewBookingDrawer = ({
           onChange={(e) => handleCustomerDetailChange(e, "amount")}
           value={amount}
         />
+        <span>Sales man:*</span>
+        <Select
+          style={{ width: "100%" }}
+          placeholder="Select Salesman"
+          onChange={(value) => handleCustomerDetailChange(value, "salesman_name")}
+          value={salesman_name}
+          options={
+            salesPersonsDetails.map((val) => {
+              return {
+                value: val.salesman_name,
+                label: `${val.salesman_name} (${val.salesman_id})`,
+              };
+            }) || []
+          }
+        />
       </Drawer>
     </div>
   );
@@ -102,6 +120,7 @@ const mapStateToProps = (state) => {
   return {
     productDetails: state.products.product_details,
     customersDetails: state.customers.customers_details,
+    salesPersonsDetails: state.sales.salesPersons_details,
   };
 };
 

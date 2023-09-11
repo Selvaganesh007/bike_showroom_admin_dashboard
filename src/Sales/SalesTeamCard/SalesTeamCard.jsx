@@ -10,7 +10,6 @@ const SalesTeamCard = ({ data }) => {
         <div className={active_status === 'Active' ? "status-active" : 'status-in-active'}>{active_status}</div>
         <img src={img} alt='employee' className='img' />
         <div className="item-count">{sale_item_count}</div>
-        
       </div>
       <div className="salesTeamCard-body">
         <div className="body-header">

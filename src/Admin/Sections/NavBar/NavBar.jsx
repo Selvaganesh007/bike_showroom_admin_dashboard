@@ -24,7 +24,7 @@ const NavBar = ({ adminDetail }) => {
       </div>
       {userIconClicked && (
         <ul>
-          <NavLink to="profile">
+          <NavLink to="/MyProfile">
             <li>
               <FaRegUser /> My Profile
             </li>
