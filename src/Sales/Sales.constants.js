@@ -71,3 +71,22 @@ export const SALES_TABLE_COLUMNS = [
 //     img: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60',
 //   },
 // ];
+
+export const SALESMAN_POSITIONS = [
+  {
+    position_id: '00868',
+    position_name: 'Chief sales officer',
+  },
+  {
+    position_id: '00869',
+    position_name: 'Senior Sales Executive',
+  },
+  {
+    position_id: '00870',
+    position_name: 'Junior Sales Executive',
+  },
+  {
+    position_id: '00871',
+    position_name: 'Junior Sales Executive Trainee',
+  }
+]

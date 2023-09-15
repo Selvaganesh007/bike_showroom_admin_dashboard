@@ -5,9 +5,8 @@ import { ORDER_TABLE_COLUMNS, initial_state } from "./Order.constants";
 import { connect } from "react-redux";
 import NewBookingDrawer from "./drawer/NewBookingDrawer";
 import { addNewBooking } from "../Features/Actions/Order.action";
-import { salesPersonsUpdate } from "../Features/Actions/Sales.action";
 
-const Order = ({ orderDetails = [], addNewOrder, salesPersonUpdate }) => {
+const Order = ({ orderDetails = [], addNewOrder }) => {
   const [draweropen, setDraweropen] = useState(false);
   const [orderDetail, setOrderDetail] = useState(initial_state);
   const [api, contextHolder] = notification.useNotification();

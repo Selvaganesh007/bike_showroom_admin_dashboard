@@ -10,6 +10,10 @@
   font-size: 1.4rem;
   font-weight: 600;
   .sales-header {
+    .sales-header-title{
+      display: flex;
+      justify-content: space-between;
+    }
     .sales-cards {
       display: flex;
       gap: 2rem;
