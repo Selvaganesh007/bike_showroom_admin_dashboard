@@ -17,7 +17,6 @@ function Base({ updateAdminDetail }) {
 
   useEffect(() => {
     const adminDetail = sessionStorage.getItem("adminDetails");
-    console.log(JSON.parse(adminDetail));
     updateAdminDetail(JSON.parse(adminDetail));
   }, []);
 
