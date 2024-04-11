@@ -11,6 +11,7 @@ export const initial_state = {
   delivery_status: "",
   customer_details: {},
   bike_details: {},
+  salesman_name: '',
 };
 
 export const ORDER_TABLE_COLUMNS = [
@@ -72,6 +73,13 @@ export const ORDER_TABLE_COLUMNS = [
     dataIndex: "bike_details",
     key: "bike_details",
     render: (data) => data?.product_name,
+    width: 160,
+  },
+  {
+    title: "Salesman Name",
+    dataIndex: "salesman_name",
+    key: "salesman_name",
+    render: (data) => data,
     width: 160,
   },
 ];

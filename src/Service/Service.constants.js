@@ -38,3 +38,22 @@ export const SERVICE_TABLE_COLUMNS = [
     width: 110,
   },
 ];
+
+export const MECHANIC_POSITIONS = [
+  {
+    position_id: '00868',
+    position_name: 'Chief Mechanic',
+  },
+  {
+    position_id: '00869',
+    position_name: 'Senior Mechanic',
+  },
+  {
+    position_id: '00870',
+    position_name: 'Junior Mechanic',
+  },
+  {
+    position_id: '00871',
+    position_name: 'Mechanic Trainee',
+  }
+]

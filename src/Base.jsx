@@ -11,12 +11,12 @@ import Service from "./Service/Service";
 import Sales from "./Sales/Sales";
 import { connect } from "react-redux";
 import { adminDetailsUpdate } from "./Features/Actions/Access.action";
+import MyProfile from "./RootLayout/MyProfile";
 
 function Base({ updateAdminDetail }) {
 
   useEffect(() => {
     const adminDetail = sessionStorage.getItem("adminDetails");
-    console.log(JSON.parse(adminDetail));
     updateAdminDetail(JSON.parse(adminDetail));
   }, []);
 
@@ -33,6 +33,7 @@ function Base({ updateAdminDetail }) {
           <Route path="sales" element={<Sales />} />
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/MyProfile" element={<MyProfile />} />
         <Route path="*" element={<PageNotFound />} />
       </>
     )

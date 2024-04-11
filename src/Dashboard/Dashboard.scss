@@ -6,9 +6,9 @@
   top: 4rem;
   left: 14rem;
   color: $dark_color;
-  // padding: 2rem;
   background-color: $secondary_color;
   height: 100vh;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   .dashboardCard {
     height: 40vh;
     padding: 0 1rem;
@@ -16,12 +16,11 @@
     justify-content: center;
     gap: 2rem;
     align-items: center;
-    background: linear-gradient(0deg, $secondary_color 7%, $primary_color 50%);
+    // background: linear-gradient(0deg, $secondary_color 7%, $primary_color 50%);
   }
   .dashboard_body {
     display: flex;
     .dashboard_body-service_notifications {
-      width: 50%;
       padding: 0rem 2rem;
       color: $dark_background_color;
       .dashboard_body-service_notifications_card {
@@ -34,8 +33,12 @@
     }
     .dashboard_body-product_details {
       color: $dark_background_color;
-      width: 50%;
       padding: 0rem 2rem;
+      width: 45rem;
+      border-radius: 2rem;
+      background-color: rgb(255, 255, 255);
+      // box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.449);
+      box-shadow: 0 0 5px 0 rgba(43,43,43,.1), 0 11px 6px -7px rgba(43,43,43,.1);
     }
   }
 }

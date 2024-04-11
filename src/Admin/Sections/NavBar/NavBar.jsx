@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./NavBar.scss";
 import { FaUserAlt, FaRegUser } from "react-icons/fa";
 import { LuLogOut, LuSettings } from "react-icons/lu";
@@ -7,6 +7,17 @@ import { connect } from "react-redux";
 
 const NavBar = ({ adminDetail }) => {
   const [userIconClicked, setUserIconClicked] = useState(false);
+
+  const newRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if(!newRef?.current?.contains(event.target)) {
+        setUserIconClicked(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+  }, [newRef]);
 
   const handleLogOut = () => {
     setUserIconClicked(false);
@@ -23,8 +34,8 @@ const NavBar = ({ adminDetail }) => {
         {(adminDetail?.first_name || '').toUpperCase()} <FaUserAlt />
       </div>
       {userIconClicked && (
-        <ul>
-          <NavLink to="profile">
+        <ul ref={newRef}>
+          <NavLink to="/MyProfile">
             <li>
               <FaRegUser /> My Profile
             </li>

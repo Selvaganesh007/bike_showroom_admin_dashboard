@@ -1,6 +1,5 @@
 import React from 'react';
 import './SalesTeamCard.scss';
-import { Image } from 'antd';
 
 const SalesTeamCard = ({ data }) => {
   const { salesman_name, img, position, sale_item_count, department, active_status } = data;
@@ -10,7 +9,6 @@ const SalesTeamCard = ({ data }) => {
         <div className={active_status === 'Active' ? "status-active" : 'status-in-active'}>{active_status}</div>
         <img src={img} alt='employee' className='img' />
         <div className="item-count">{sale_item_count}</div>
-        
       </div>
       <div className="salesTeamCard-body">
         <div className="body-header">

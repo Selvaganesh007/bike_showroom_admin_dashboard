@@ -59,6 +59,7 @@ function Login({ updateAdminDetail }) {
           Login
         </Button>
       </div>
+      <h5>user name: admin1, password: admin1</h5>
     </div>
   );
 }
