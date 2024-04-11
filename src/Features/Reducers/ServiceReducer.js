@@ -2,6 +2,7 @@ import { ACTION_TYPES } from "../Actions/Service.action"
 
 const initial_state = {
   service_details: [],
+  servicePersons_details: [],
 }
 
 const serviceReducer = (state = initial_state, action) => {
@@ -11,6 +12,11 @@ const serviceReducer = (state = initial_state, action) => {
         ...state,
         service_details: action.payload,
       }
+      case ACTION_TYPES.SERVICE_PERSONS:
+      return {
+        ...state,
+        servicePersons_details: action.payload,
+      };
     default: return state;
   }
 };

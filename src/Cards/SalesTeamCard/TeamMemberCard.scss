@@ -1,0 +1,85 @@
+@import "../../Assets/scss/variables";
+
+@mixin status-style($bgColor) {
+  font-size: 1rem;
+  border-radius: 1rem;
+  width: 5rem;
+  text-align: center;
+  padding: 0.2rem;
+  position: absolute;
+  right: 0;
+  background-color: $bgColor;
+  color: white;
+}
+
+.TeamMemberCard {
+  background-color: $secondary_color;
+  color: black;
+  padding: 1rem;
+  font-family: $primary_font;
+  border-radius: 1rem;
+  width: 12rem;
+  height: 13rem;
+  box-shadow: 9px 9px 12px -2px rgba(0, 0, 0, 0.43);
+  .TeamMember-header {
+    position: relative;
+    .status-active {
+      @include status-style(rgb(29, 107, 29));
+    }
+    .status-in-active {
+      @include status-style(rgb(241, 52, 52));
+    }
+    .img {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50% 50%;
+      background-color: aquamarine;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .name {
+      font-size: 1.2rem;
+    }
+    .item-count {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 33px;
+      right: 9px;
+    }
+  }
+  .TeamMember-body {
+    padding-top: 1rem;
+    .body-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .name {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: #0d00fc;
+      }
+      .department {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        width: 3rem;
+        font-weight: 500;
+        background-color: rgb(113, 180, 238);
+        height: 0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+      }
+    }
+    .position {
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.8rem;
+    }
+  }
+}

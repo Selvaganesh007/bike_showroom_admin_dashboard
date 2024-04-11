@@ -10,6 +10,17 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
+  .service-header {
+    .service-header-title{
+      display: flex;
+      justify-content: space-between;
+    }
+    .service-cards {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
   h3 {
     margin: 0 0 1rem 0;
   }

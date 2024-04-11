@@ -2,7 +2,6 @@ import React from 'react';
 import './HeaderCard.scss';
 
 const HeaderCard = ({ card_name, item_count, icon }) => {
-  console.log('header', card_name, item_count);
   return (
       <div className='headerCard'>
         <div className='headerCard-icon'>{icon}</div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import './SalesTeamCard.scss';
-import { Image } from 'antd';
 
 const SalesTeamCard = ({ data }) => {
   const { salesman_name, img, position, sale_item_count, department, active_status } = data;

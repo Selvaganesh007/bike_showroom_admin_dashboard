@@ -3,8 +3,8 @@ import "./Sales.scss";
 import { connect } from "react-redux";
 import { Button, Table } from "antd";
 import { SALES_TABLE_COLUMNS } from "./Sales.constants";
-import SalesTeamCard from "./SalesTeamCard/SalesTeamCard";
 import AddSalesManDrawer from "./SalesDrawer/AddSalesManDrawer";
+import TeamMemberCard from "../Cards/SalesTeamCard/TeamMemberCard";
 
 const Sales = ({ salesDetails, salesPersonsDetails }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -14,11 +14,20 @@ const Sales = ({ salesDetails, salesPersonsDetails }) => {
       <div className="sales-header">
         <div className="sales-header-title">
           <h3>Sales Team</h3>
-          <Button onClick={() => setDrawerOpen(true)} type="primary">Add sales man</Button>
+          <Button onClick={() => setDrawerOpen(true)} type="primary">
+            Add sales man
+          </Button>
         </div>
         <div className="sales-cards">
           {salesPersonsDetails.map((val) => (
-            <SalesTeamCard data={val} />
+            <TeamMemberCard
+              img={val.img} 
+              position={val.position} 
+              taskItemCount={val.sale_item_count}
+              department={val.department}
+              activeStatus={val.active_status}
+              memberName={val.salesman_name} 
+            />
           ))}
         </div>
       </div>

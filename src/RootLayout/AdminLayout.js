@@ -3,14 +3,14 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../Admin/Sections/NavBar/NavBar";
 import LeftPanel from "../Admin/Sections/LeftPanel/LeftPanel";
 import { connect } from "react-redux";
-import { customersMockdata, serviceDetailsMockData, productMockData, orderDetailsMockData, salesdetailsMockData, salesPersonsDetails } from "../mockdata";
+import { customersMockdata, serviceDetailsMockData, productMockData, orderDetailsMockData, salesdetailsMockData, salesPersonsDetails, servicePersonsDetails } from "../mockdata";
 import { productsDetailsUpdate } from "../Features/Actions/Products.action";
 import { customersDetailsUpdate } from "../Features/Actions/Customers.action";
-import { serviceDetailsUpdate } from "../Features/Actions/Service.action";
+import { serviceDetailsUpdate, servicePersonsUpdate } from "../Features/Actions/Service.action";
 import { orderDetailsUpdate } from "../Features/Actions/Order.action";
 import { salesDetailsUpdate, salesPersonsUpdate } from "../Features/Actions/Sales.action";
 
-const AdminLayout = ({ fetchProductDetail, fetchCustomersDetail, fetchServicePendingDetails, fetchOrderDetails, fetchSalesdetails, fetchSalesPersonDetails }) => {
+const AdminLayout = ({ fetchProductDetail, fetchServicePersonsDetails, fetchCustomersDetail, fetchServicePendingDetails, fetchOrderDetails, fetchSalesdetails, fetchSalesPersonDetails }) => {
 
   useEffect(() => {
     fetchProductDetail(productMockData);
@@ -19,6 +19,7 @@ const AdminLayout = ({ fetchProductDetail, fetchCustomersDetail, fetchServicePen
     fetchOrderDetails(orderDetailsMockData);
     fetchSalesdetails(salesdetailsMockData);
     fetchSalesPersonDetails(salesPersonsDetails);
+    fetchServicePersonsDetails(servicePersonsDetails);
   }, []);
 
   return (
@@ -41,7 +42,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchServicePendingDetails: (data) => dispatch(serviceDetailsUpdate(data)),
     fetchOrderDetails: (data) => dispatch(orderDetailsUpdate(data)),
     fetchSalesdetails: (data) => dispatch(salesDetailsUpdate(data)),
-    fetchSalesPersonDetails: (data) => dispatch(salesPersonsUpdate(data))
+    fetchSalesPersonDetails: (data) => dispatch(salesPersonsUpdate(data)),
+    fetchServicePersonsDetails: (data) => dispatch(servicePersonsUpdate(data)),
   }
 }
 
