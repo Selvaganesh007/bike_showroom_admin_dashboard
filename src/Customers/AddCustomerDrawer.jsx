@@ -8,19 +8,22 @@ import {
   Space,
 } from "antd";
 import { GENDER_LIST, STATE_DATA } from "../helper";
+import { DRAWER_ACTIONS } from "./Customers.constants";
 
 const AddCustomerDrawer = ({
   drawerOpen,
   onDrawerClose,
   customerdetails,
   setCustomerDetail,
-  handleAddCustomer,
-  customers_details
+  handleActionCustomer,
+  customersDetailsLength,
+  drawerTitle,
 }) => {
+
   const handleCustomerDetailChange = (value, field) => {
     switch (field) {
       case "customer_name":
-        return setCustomerDetail({ ...customerdetails, customer_name: value, customer_id: customers_details.length + 2001 });
+        return setCustomerDetail({ ...customerdetails, customer_name: value, customer_id: customersDetailsLength + 2001 });
       case "gender":
         return setCustomerDetail({ ...customerdetails, gender: value });
       case "date_of_birth":
@@ -54,7 +57,7 @@ const AddCustomerDrawer = ({
   return (
     <div>
       <Drawer
-        title="Add New Customer"
+        title={drawerTitle}
         placement="right"
         width={500}
         onClose={() => onDrawerClose(false)}
@@ -62,8 +65,8 @@ const AddCustomerDrawer = ({
         extra={
           <Space>
             <Button onClick={() => onDrawerClose(false)}>Cancel</Button>
-            <Button type="primary" onClick={() => handleAddCustomer()}>
-              Add
+            <Button type="primary" onClick={() => handleActionCustomer(drawerTitle)}>
+              {drawerTitle === DRAWER_ACTIONS.edit_title ? "Edit" : "Add"}
             </Button>
           </Space>
         }
@@ -98,6 +101,7 @@ const AddCustomerDrawer = ({
           placeholder="Enter customer email"
           value={email}
           onChange={(e) => handleCustomerDetailChange(e.target.value, "email")}
+          disabled={drawerTitle === DRAWER_ACTIONS.edit_title ? true : false}
         />
         <span>Phone number:*</span>
         <Input
