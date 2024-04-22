@@ -1,4 +1,12 @@
-export const CUSTOMERS_TABLE_COLUMNS = [
+import { Button } from "antd";
+import './Customers.scss';
+
+export const DRAWER_ACTIONS = {
+  edit_title: "Edit customer",
+  add_new_title: "Add new customer",
+}
+
+export const CUSTOMERS_TABLE_COLUMNS = (handleEdit, deleteConfirmation) => [
   {
     title: "Customer ID",
     dataIndex: "customer_id",
@@ -34,5 +42,20 @@ export const CUSTOMERS_TABLE_COLUMNS = [
     title: "Pin code",
     dataIndex: "pin_code",
     key: "pin_code",
-  }
+  },
+  {
+    title: "Action",
+    dataIndex: "action",
+    key: "action",
+    render: (_, data) => (
+      <div className="tableAction">
+        <Button type="primary" onClick={() => handleEdit(data)}>
+          Edit
+        </Button>
+        <Button type="primary" onClick={() => deleteConfirmation(data)} danger>
+          Delete
+        </Button>
+      </div>
+    ),
+  },
 ];

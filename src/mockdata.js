@@ -114,7 +114,7 @@ export const customersMockdata = [
     email: "selvaganesh@gmail.com",
     phone_number: "8976978723",
     pin_code: 600032,
-    gender: "",
+    gender: "male",
     date_of_birth: "",
   },
   {
@@ -125,7 +125,7 @@ export const customersMockdata = [
     email: "dharun@gmail.com",
     phone_number: "8976973423",
     pin_code: 600043,
-    gender: "",
+    gender: "male",
     date_of_birth: "",
   },
   {
@@ -136,7 +136,7 @@ export const customersMockdata = [
     email: "pradeep@gmail.com",
     phone_number: "9766978723",
     pin_code: 600012,
-    gender: "",
+    gender: "male",
     date_of_birth: "",
   },
   {
@@ -147,7 +147,7 @@ export const customersMockdata = [
     email: "edward@gmail.com",
     phone_number: "8976978723",
     pin_code: 620132,
-    gender: "",
+    gender: "male",
     date_of_birth: "",
   },
   {
@@ -158,7 +158,7 @@ export const customersMockdata = [
     email: "hari@gmail.com",
     phone_number: "9283478723",
     pin_code: 628501,
-    gender: "",
+    gender: "male",
     date_of_birth: "",
   },
 ];

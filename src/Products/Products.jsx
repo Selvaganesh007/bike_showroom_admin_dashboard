@@ -5,11 +5,6 @@ import { PRODUCT_TABLE_COLUMNS } from "./Products.constants";
 import { connect } from "react-redux";
 
 const Products = ({ productDetail }) => {
-
-  const onChange = (pagination, filters, sorter, extra) => {
-    console.log('params', pagination, filters, sorter, extra);
-  };
-
   return (
     <div className="products">
       <h3>Products</h3>
@@ -19,7 +14,6 @@ const Products = ({ productDetail }) => {
           dataSource={productDetail}
           pagination={false}
           scroll={{x:1600, y: 400}}
-          onChange={onChange}
         />
       </div>
     </div>
