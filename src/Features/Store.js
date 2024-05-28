@@ -1,10 +1,11 @@
-import { combineReducers, legacy_createStore } from "redux";
+import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import productReducer from "./Reducers/ProductReducer";
 import customersReducer from "./Reducers/CustomersReducer";
 import serviceReducer from "./Reducers/ServiceReducer";
 import orderReducer from "./Reducers/OrderReducer";
 import salesReducer from "./Reducers/SalesReducer";
 import adminReducer from "./Reducers/AdminReducer";
+import { thunk } from "redux-thunk";
 
 const rootReducer = combineReducers({
   products: productReducer,
@@ -15,6 +16,6 @@ const rootReducer = combineReducers({
   admin: adminReducer,
 });
 
-const Store = legacy_createStore(rootReducer);
+const Store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 
 export default Store;

@@ -5,6 +5,7 @@ import { CUSTOMERS_TABLE_COLUMNS, DRAWER_ACTIONS } from "./Customers.constants";
 import AddCustomerDrawer from "./AddCustomerDrawer";
 import { connect } from "react-redux";
 import { addCustomer } from "../Features/Actions/Customers.action";
+import { url } from "../api";
 
 const initial_state = {
   customer_id: "",
@@ -25,17 +26,6 @@ const Customers = ({ customers_details, addNewCustomer }) => {
   const [api, contextHolder] = notification.useNotification();
 
   const { confirm } = Modal;
-
-  const deleteConfirmation = (data) => {
-    confirm({
-      title: 'Do you want to delete this customer?',
-      content: `customer name: ${data.customer_name} (${data.customer_id})`,
-      onOk() {
-        // delete api call -> data
-        // console.log(data);
-      },
-    });
-  };
 
   const openNotification = (key, message) => {
     if (key === "success") {
@@ -59,11 +49,22 @@ const Customers = ({ customers_details, addNewCustomer }) => {
     }
   };
 
+  const deleteConfirmation = (data) => {
+    confirm({
+      title: 'Do you want to delete this customer?',
+      content: `customer name: ${data.customer_name} (${data.customer_id})`,
+      onOk() {
+        url.deleteCustomer(data.customer_id).then(data => openNotification("success", "Customer deleted successfully")).catch((err) => openNotification("error", "Error while deleting the customer"));
+      },
+    });
+  };
+
   const handleActionCustomer = (type) => {
     if (type === DRAWER_ACTIONS.add_new_title) {
       if (Object.values(customerdetails).every((val) => val !== "")) {
         addNewCustomer(customerdetails);
         drawerNew();
+        setDraweropen(false);
         openNotification("success", "New customer Added successfully");
       } else {
         openNotification("error", "Kindly fill all mandatory fields");
@@ -71,6 +72,7 @@ const Customers = ({ customers_details, addNewCustomer }) => {
     } else {
       if (Object.values(customerdetails).every((val) => val !== "")) {
         // addNewCustomer(customerdetails);
+        console.log(customerdetails);
         // edited data -> customerdetails -> edit api call payload
         drawerNew();
         openNotification("success", "Customer edited successfully");

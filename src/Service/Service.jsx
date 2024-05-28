@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Service.scss";
 import { Button, Table } from "antd";
 import { SERVICE_TABLE_COLUMNS } from "./Service.constants";
 import { connect } from "react-redux";
 import AddMechanicDrawer from "./ServiceDrawer/AddMechanicDrawer";
 import TeamMemberCard from "../Cards/SalesTeamCard/TeamMemberCard";
+import { url } from "../api";
+import { servicePersonsUpdate } from "../Features/Actions/Service.action";
 
-const Service = ({ serviceDetails, servicePersonsDetails }) => {
+const Service = ({ serviceDetails, servicePersonsDetails, fetchServicePersonsDetails }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  useEffect(() => {
+    url.getMechanicDetails().then(data => fetchServicePersonsDetails(data)).catch((err) => console.log(err));
+  }, [])
 
   return (
     <div className="Service">
@@ -54,6 +60,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchServicePersonsDetails: (data) => dispatch(servicePersonsUpdate(data)),
+  }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Service);

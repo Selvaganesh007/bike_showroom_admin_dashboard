@@ -27,7 +27,7 @@ const Dashboard = ({ products, serviceDetails, customerDetails, orderDetails, sa
     return dashboardCards.map(({card_name, item_count, icon}) => {
       if (card_name === 'Products') {
         return <HeaderCard card_name={card_name} item_count={product_details?.length} icon={icon} />;
-      } else if (card_name === 'Service') {
+      } else if (card_name === 'Salesman') {
         return <HeaderCard card_name={card_name} item_count={serviceDetails?.length} icon={icon} />;
       } else if (card_name === 'Customers') {
         return <HeaderCard card_name={card_name} item_count={customerDetails?.length} icon={icon} />;
@@ -57,7 +57,9 @@ const Dashboard = ({ products, serviceDetails, customerDetails, orderDetails, sa
         </div>
         <div className="dashboard_body-product_details">
           <h3>Products Details</h3>
-          <Bar data={data} />
+          {
+            product_details.length === 0 ? 'No products' : <Bar data={data} />
+          }
         </div>
       </div>
     </div>

@@ -7,8 +7,10 @@ import {
   Select,
   Space,
 } from "antd";
-import { GENDER_LIST, STATE_DATA } from "../helper";
+import { GENDER_LIST, STATE_DATA, dateConvertion } from "../helper";
 import { DRAWER_ACTIONS } from "./Customers.constants";
+import dayjs from 'dayjs';
+import moment from "moment";
 
 const AddCustomerDrawer = ({
   drawerOpen,
@@ -21,6 +23,9 @@ const AddCustomerDrawer = ({
 }) => {
 
   const handleCustomerDetailChange = (value, field) => {
+    console.log(value);
+    const date = dateConvertion(value.$d);
+    console.log(date);
     switch (field) {
       case "customer_name":
         return setCustomerDetail({ ...customerdetails, customer_name: value, customer_id: customersDetailsLength + 2001 });
@@ -90,8 +95,12 @@ const AddCustomerDrawer = ({
         <span>Date of birth:*</span>
         <DatePicker
           style={{ width: "100%" }}
-          value={date_of_birth}
-          format='DD/MM/YYYY'
+          value={dayjs(date_of_birth, 'YYYY-MM-DD')}
+          format='YYYY-MM-DD'
+          disabledDate={(current) => {
+            return moment().add(-1, 'days')  >= current ||
+                 moment().add(1, 'month')  <= current;
+            }}
           onChange={(value) =>
             handleCustomerDetailChange(value, "date_of_birth")
           }

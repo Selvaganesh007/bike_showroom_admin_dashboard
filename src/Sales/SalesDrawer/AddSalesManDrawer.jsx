@@ -1,9 +1,10 @@
 import { Button, Drawer, Input, InputNumber, Select, Space } from "antd";
 import React from "react";
 import { SALESMAN_POSITIONS } from "../Sales.constants";
+import { url } from "../../api";
 
 const INITIAL_STATE = {
-  alesman_name: "",
+  salesman_name: "",
   experience: "",
   position: "",
 }
@@ -32,8 +33,27 @@ class AddSalesManDrawer extends React.Component {
     }
   };
 
+  // handleAddSalesman = async () => {
+  //   console.log(this.state.salesManDetails);
+  //   try {
+  //     await fetch("http://localhost:8000/sales/addSalesMan", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(this.state.salesManDetails),
+  //     })
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  //   this.props.onDrawerClose(false);
+  //   this.setState({ salesManDetails: INITIAL_STATE })
+  // }
+
   handleAddSalesman = () => {
-    //
+    // console.log(this.state.salesManDetails);
+    const data = url.addSalesman(this.state.salesManDetails);
+    console.log(data);
     this.props.onDrawerClose(false);
     this.setState({ salesManDetails: INITIAL_STATE })
   }

@@ -33,7 +33,6 @@ class AddMechanicDrawer extends React.Component {
   };
 
   handleAddSalesman = () => {
-    //
     this.props.onDrawerClose(false);
     this.setState({ mechanicDetails: INITIAL_STATE })
   }
@@ -61,7 +60,7 @@ class AddMechanicDrawer extends React.Component {
             </Space>
           }
         >
-          <span>Salesman Name:*</span>
+          <span>Mechanic Name:*</span>
           <Input
             placeholder="Mechanic Name"
             value={mechanic_name}

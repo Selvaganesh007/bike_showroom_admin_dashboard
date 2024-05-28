@@ -3,23 +3,33 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../Admin/Sections/NavBar/NavBar";
 import LeftPanel from "../Admin/Sections/LeftPanel/LeftPanel";
 import { connect } from "react-redux";
-import { customersMockdata, serviceDetailsMockData, productMockData, orderDetailsMockData, salesdetailsMockData, salesPersonsDetails, servicePersonsDetails } from "../mockdata";
 import { productsDetailsUpdate } from "../Features/Actions/Products.action";
 import { customersDetailsUpdate } from "../Features/Actions/Customers.action";
-import { serviceDetailsUpdate, servicePersonsUpdate } from "../Features/Actions/Service.action";
+import {
+  serviceDetailsUpdate,
+} from "../Features/Actions/Service.action";
 import { orderDetailsUpdate } from "../Features/Actions/Order.action";
-import { salesDetailsUpdate, salesPersonsUpdate } from "../Features/Actions/Sales.action";
+import {
+  salesDetailsUpdate,
+  salesPersonsUpdate,
+} from "../Features/Actions/Sales.action";
+import { url } from "../api";
 
-const AdminLayout = ({ fetchProductDetail, fetchServicePersonsDetails, fetchCustomersDetail, fetchServicePendingDetails, fetchOrderDetails, fetchSalesdetails, fetchSalesPersonDetails }) => {
-
+const AdminLayout = ({
+  fetchProductDetail,
+  fetchCustomersDetail,
+  fetchServicePendingDetails,
+  fetchOrderDetails,
+  fetchSalesdetails,
+  fetchSalesPersonDetails,
+}) => {
   useEffect(() => {
-    fetchProductDetail(productMockData);
-    fetchCustomersDetail(customersMockdata);
-    fetchServicePendingDetails(serviceDetailsMockData);
-    fetchOrderDetails(orderDetailsMockData);
-    fetchSalesdetails(salesdetailsMockData);
-    fetchSalesPersonDetails(salesPersonsDetails);
-    fetchServicePersonsDetails(servicePersonsDetails);
+    url.getProducts().then(data => fetchProductDetail(data)).catch((err) => console.log(err));
+    url.getCustomersDetails().then(data => fetchCustomersDetail(data)).catch((err) => console.log(err));
+    url.getServiceDetails().then(data => fetchServicePendingDetails(data)).catch((err) => console.log(err));
+    url.getOrderDetails().then(data => fetchOrderDetails(data)).catch((err) => console.log(err));
+    url.getSalesDetails().then(data => fetchSalesdetails(data)).catch((err) => console.log(err));
+    url.getSalesmanDetails().then(data => fetchSalesPersonDetails(data)).catch((err) => console.log(err));
   }, []);
 
   return (
@@ -43,8 +53,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchOrderDetails: (data) => dispatch(orderDetailsUpdate(data)),
     fetchSalesdetails: (data) => dispatch(salesDetailsUpdate(data)),
     fetchSalesPersonDetails: (data) => dispatch(salesPersonsUpdate(data)),
-    fetchServicePersonsDetails: (data) => dispatch(servicePersonsUpdate(data)),
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminLayout);

@@ -16,7 +16,7 @@ export const dashboardCards = [
     icon: <GiTakeMyMoney />,
   },
   {
-    card_name: "Service",
+    card_name: "Salesman",
     item_count: 14,
     icon: <RiCustomerService2Fill />,
   },
